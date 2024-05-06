@@ -1,5 +1,5 @@
-name: "clio_takehome"
-profile: "clio_takehome"
+name: "takehome"
+profile: "takehome"
 version: "1.0.0"
 config-version: 2
 
@@ -11,7 +11,7 @@ macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
 seeds:
-  clio_takehome:
+  takehome:
     sales_performance:
       +column_types:
         date: date
@@ -32,5 +32,5 @@ seeds:
         daily_spend: integer
 
 models:
-  clio_takehome:
+  takehome:
     materialized: view

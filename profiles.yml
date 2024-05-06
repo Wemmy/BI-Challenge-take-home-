@@ -1,4 +1,4 @@
-clio_takehome:
+takehome:
   target: "{{env_var('DBT_TARGET') }}"
   outputs:
     dev:
