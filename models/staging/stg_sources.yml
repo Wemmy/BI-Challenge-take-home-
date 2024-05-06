@@ -1,0 +1,9 @@
+models:
+  - name: stg_sources
+    description: dimention source.
+    columns:
+      - name: source
+        description: source
+        tests:
+          - not_null
+          - unique

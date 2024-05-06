@@ -1,0 +1,12 @@
+models:
+  - name: stg_sales_performance
+    description: Sales data with basic cleaning and transformation applied, one row per rep per source per day.
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "closed_won <= opportunities AND opportunities <= leads"
+    columns:
+      - name: hash_key
+        description: The unique key for each ROW.
+        tests:
+          - not_null
+          - unique

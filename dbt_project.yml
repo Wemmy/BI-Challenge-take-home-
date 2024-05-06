@@ -1,0 +1,36 @@
+name: "clio_takehome"
+profile: "clio_takehome"
+version: "1.0.0"
+config-version: 2
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+seeds:
+  clio_takehome:
+    sales_performance:
+      +column_types:
+        date: date
+        rep_id: integer
+        source: varchar(255)
+        leads: integer
+        opportunities: integer
+        closed_won: integer
+        revenue: decimal
+      +quote_columns: false
+    sales_reps:
+      +column_types:
+        rep_id: integer
+        manager_id: integer
+    sources:
+      +column_types:
+        source: varchar(255)
+        daily_spend: integer
+
+models:
+  clio_takehome:
+    materialized: view
