@@ -15,16 +15,6 @@
    pip install -r requirements.txt
 ```
 
-create a file to store below variables:
-DBT_TARGET
-DBT_PROFILES_DIR
-postgres_HOST
-postgres_USER
-postgres_PASSWORD
-postgres_PORT
-postgres_DBNAME
-postgres_SCHEMA
-
 2. Set up database:
 
 ```
@@ -33,12 +23,20 @@ postgres_SCHEMA
 
 3. Set up dbt profile
 
-   - set environmental variables in .env
+- set environmental variables in .env
+  [DBT_TARGET]
+  [DBT_PROFILES_DIR]
+  [postgres_HOST]
+  [postgres_USER]
+  [postgres_PASSWORD]
+  [postgres_PORT]
+  [postgres_DBNAME]
+  [postgres_SCHEMA]
 
 - add below line to automatically setup environmental variable with Virtual Environment
+  ```
   Get-Content .env | ForEach-Object { $key, $value = $_ -split '=',2; [System.Environment]::SetEnvironmentVariable($key, $value, [System.EnvironmentVariableTarget]::Process) }
-
-* Set up dbt profile
+  ```
 
 4. set up dbt project
    create folders for models/analyses/tests/seeds/macros/snapshots and run dbt debug
